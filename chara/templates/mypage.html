@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Mypage{% endblock %}
+
+      {% block contents %}
+      {% if user.is_authenticated %}
+        <br>
+        <div style="text-align: center;">
+            <h4>{{user.username}}さんの家</h4>
+            {% if object_list.count == 0 %}
+              <p>{{user.username}}さんのキャラはまだ誰もいません</p>
+            {% else %}
+              <p>住民数<strong>{{object_list.count}}</strong></p>
+            {% endif %}
+            <a href="{% url 'chara:post' %}">投稿する</a>
+        </div>
+        <hr>
+      {% endif %}
+
+      {% include "charas_list.html" %}
+      {% include 'pagenation.html' %}
+      {% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+      {% block contents %}
+<form name="sentMessage" id="contactForm" novalidate>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>名前</label>
+      <input type="text" class="form-control" placeholder="name" id="name" required data-validation-required-message="名前を入力してください.">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>メールアドレス</label>
+      <input type="email" class="form-control" placeholder="email" id="email" required data-validation-required-message="メールアドレスを入力してください">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group col-xs-12 floating-label-form-group controls">
+      <label>件名</label>
+      <input type="text" class="form-control" placeholder="title" id="title" required data-validation-required-message="件名を入力してください.">
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="form-group floating-label-form-group controls">
+      <label>メッセージ</label>
+      <textarea rows="5" class="form-control" placeholder="message" id="message" required data-validation-required-message="メッセージを入力してください"></textarea>
+      <p class="help-block text-danger"></p>
+    </div>
+  </div>
+  <br>
+  <div id="success"></div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" id="sendMessageButton">送信</button>
+  </div>
+</form>
+      {% endblock %}

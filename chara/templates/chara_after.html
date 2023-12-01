@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Chara After{% endblock %}
+
+      {% block contents %}
+      <br><br>
+      <div class="container">
+        <div class="row">
+            <div class="col offset-2">
+                <h4 style="color: rgb(0, 0, 219);">キャラとお別れしました...</h4>
+                <h7 style="color: rgb(0, 0, 219);">忘れないでね</h7>
+                <li><a href="{% url 'chara:mypage' %}" class="text-white">マイページに戻る</a></li>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Chara Delete{% endblock %}
+
+      {% block contents %}
+      <br>
+      <div class="container">
+        <div class="row">
+            <div class="col offset-3">
+                <form method="POST">
+
+                    <br>
+                    <p>この子とお別れしますか?</p>
+                    {% csrf_token %}
+                    <a href="{% url 'chara:chara_question' object.pk %}" class="btn btn-primary my-2">お別れする</a>
+                    <!-- <button class="btn btn-primary my-2" type="submit">お別れする</button> -->
+                    <a href="{% url 'chara:chara_detail' object.pk %}" class="btn btn-secondary my-2">やめる</a>
+            </div>
+        </div>
+      </div>
+      {% endblock %}
