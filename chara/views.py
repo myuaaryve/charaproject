@@ -97,8 +97,8 @@ class ContactView(FormView):
         message = \
           '送信者名: {0}\nメールアドレス: {1}\n タイトル:{2}\n メッセージ:\n{3}'\
           .format(name, email, title, message)
-        from_email = 'admin@example.com'
-        to_list = ['admin@example.com']
+        from_email = 'morelllusionfuhrer@gmail.com'
+        to_list = ['morelllusionfuhrer@gmail.com']
         message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list)
         message.send()
         messages.success(
@@ -110,7 +110,7 @@ class EditView(UpdateView):
     template_name = 'hensyuu.html'
     model = CharaMake
     success_url = reverse_lazy('chara:post_done')
-    fields = ['user', 'category', 'title', 'comment', 'image1']
+    fields = ['category', 'title', 'comment', 'image1', 'image2']
     def form_valid(self,form):
         postdata = form.save(commit=False)
         postdata.user = self.request.user
